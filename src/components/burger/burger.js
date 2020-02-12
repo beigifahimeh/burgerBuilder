@@ -1,9 +1,10 @@
 import React from "react";
 import BurgerIngredient from "./burgerIngredient/burgerIngredient";
 import classes from "./burger.module.css";
-import { array } from "prop-types";
 
 const burger = props => {
+  // console.log(props.ingredients);
+  // console.log(props.ingredients);
   let transformingIngredient = Object.keys(props.ingredients)
     .map(ingKey => {
       return [...Array(props.ingredients[ingKey])].map((_, index) => {
@@ -18,7 +19,7 @@ const burger = props => {
     .reduce((pre, next) => {
       return pre.concat(next);
     }, []);
-  console.log(transformingIngredient);
+  // console.log(transformingIngredient);
   if (transformingIngredient.length === 0) {
     transformingIngredient = <p>please start adding ingredients</p>;
   }
@@ -30,5 +31,4 @@ const burger = props => {
     </div>
   );
 };
-
 export default burger;
